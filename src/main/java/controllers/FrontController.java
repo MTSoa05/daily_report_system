@@ -56,7 +56,7 @@ public class FrontController extends HttpServlet {
      * @param response レスポンス
      * @return
      */
-    @SuppressWarnings({"reatypes", "unchecked"}) // コンパイラ警告を抑制
+    @SuppressWarnings({"rawtypes", "unchecked"}) // コンパイラ警告を抑制
     private ActionBase getAction(HttpServletRequest request, HttpServletResponse response) {
         Class type = null;
         ActionBase action = null;
