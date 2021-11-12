@@ -11,7 +11,7 @@ public enum AttributeConst {
     FLUSH("flush"),
 
     // 一覧画面共有
-    MAX_ROM("maxrom"),
+    MAX_ROW("maxRow"),
     PAGE("page"),
 
     // 入力フォーム共通
