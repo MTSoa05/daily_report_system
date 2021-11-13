@@ -42,7 +42,7 @@
         </table>
 
         <p>
-            <a href="<c:url value='?action=${actEmp}&command="${commEdit}&id=${employee.id}' />">この従業員情報を編集する</a>
+            <a href="<c:url value='?action=${actEmp}&command=${commEdit}&id=${employee.id}' />">この従業員情報を編集する</a>
         </p>
 
         <p>
