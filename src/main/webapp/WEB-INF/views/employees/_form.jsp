@@ -19,6 +19,13 @@
 <input type="text" name="${AttributeConst.EMP_CODE.getValue()}" value="${employee.code}" />
 <br /><br />
 
+<label for="${AttributeConst.EMP_DEPT.getValue()}">所属部署</label><br />
+<select name="${AttributeConst.EMP_DEPT.getValue()}">
+    <option value="${AttributeConst.DEPT_GENERAL_AFFAIRS.getValue()}" <c:if test="${employee.department == AttributeConst.DEPT_GENERAL_AFFAIRS.getValue()}">selected</c:if>>総務</option>
+    <option value="${AttributeConst.DEPT_HUMAN_RESOURCES.getValue()}"<c:if test="${employee.department == AttributeConst.DEPT_HUMAN_RESOURCES.getValue()}">selected</c:if>>人事</option>
+</select>
+<br /><br />
+
 <label for="${AttributeConst.EMP_NAME.getValue()}">氏名</label><br />
 <input type="text" name="${AttributeConst.EMP_NAME.getValue()}" value="${employee.name}"/>
 <br /><br />

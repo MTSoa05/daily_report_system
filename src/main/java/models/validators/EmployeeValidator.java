@@ -30,6 +30,12 @@ public class EmployeeValidator {
             errors.add(codeError);
         }
 
+        // 部署名のチェック
+        String departmentError = validateDepartment(ev.getDepartment());
+        if(!departmentError.equals("")) {
+            errors.add(departmentError);
+        }
+
         // 氏名のチェック
         String nameError = validateName(ev.getName());
         if (!nameError.equals("")) {
@@ -80,6 +86,21 @@ public class EmployeeValidator {
     private static long isDuplicateEmployee(EmployeeService service, String code) {
         long employeesCount = service.countByCode(code);
         return employeesCount;
+    }
+
+
+    /**
+     * 部署名に入力値があるかをチェックし、入力値がなければエラーメッセージを返却
+     * @param department 部署名
+     * @return エラーメッセージ
+     */
+    private static String validateDepartment(String department) {
+        if(department == null || department.equals("")) {
+            return MessageConst.E_NOEMP_DEPT.getMessage();
+        }
+
+        // 入力値がある場合は空文字を返却
+        return "";
     }
 
     /**

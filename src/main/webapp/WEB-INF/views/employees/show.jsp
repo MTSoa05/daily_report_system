@@ -19,6 +19,10 @@
                 <td><c:out value="${employee.code}" /></td>
             </tr>
             <tr>
+                <th>所属部署</th>
+                <td><c:out value="${employee.department}" /></td>
+            </tr>
+            <tr>
                 <th>氏名</th>
                 <td><c:out value="${employee.name}" /></td>
             </tr>

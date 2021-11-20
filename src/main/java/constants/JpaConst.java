@@ -18,6 +18,7 @@ public interface JpaConst {
     // 従業員テーブルカラム
     String EMP_COL_ID = "id"; // id
     String EMP_COL_CODE = "code"; // 社員番号
+    String EMP_COL_DEPT = "department"; // 部署名   追加
     String EMP_COL_NAME = "name"; // 氏名
     String EMP_COL_PASS = "password"; // パスワード
     String EMP_COL_ADMIN_FLAG = "admin_flag"; // 管理者権限

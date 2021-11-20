@@ -20,12 +20,14 @@
             <tbody>
                 <tr>
                     <th>社員番号</th>
+                    <th>所属部署</th>
                     <th>氏名</th>
                     <th>操作</th>
                 </tr>
                 <c:forEach var="employee" items="${employees}" varStatus="status">
-                    <tr class="row${status.count % 2}">
+                    <tr class="row${status.count % 3}">
                         <td><c:out value="${employee.code}" /></td>
+                        <td><c:out value="${employee.department}"></c:out></td>
                         <td><c:out value="${employee.name}" /></td>
                         <td>
                             <c:choose>

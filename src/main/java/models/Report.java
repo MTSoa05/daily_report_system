@@ -86,7 +86,7 @@ public class Report {
      * 登録日時
      */
     @Column(name = JpaConst.REP_COL_CREATED_AT, nullable = false)
-    private LocalDateTime createdAT;
+    private LocalDateTime createdAt;
 
     /**
      * 更新日時

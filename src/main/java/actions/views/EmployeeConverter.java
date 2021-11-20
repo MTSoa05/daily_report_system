@@ -23,6 +23,7 @@ public class EmployeeConverter {
         return new Employee(
                 ev.getId(),
                 ev.getCode(),
+                ev.getDepartment(),
                 ev.getName(),
                 ev.getPassword(),
                 ev.getAdminFlag() == null
@@ -52,6 +53,7 @@ public class EmployeeConverter {
         return new EmployeeView(
                 e.getId(),
                 e.getCode(),
+                e.getDepartment(),
                 e.getName(),
                 e.getPassword(),
                 e.getAdminFlag() == null
@@ -91,6 +93,7 @@ public class EmployeeConverter {
     public static void copyViewToModel(Employee e, EmployeeView ev) {
         e.setId(ev.getId());
         e.setCode(ev.getCode());
+        e.setDepartment(ev.getDepartment());
         e.setName(ev.getName());
         e.setPassword(ev.getPassword());
         e.setAdminFlag(ev.getAdminFlag());
