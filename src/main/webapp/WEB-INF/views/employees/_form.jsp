@@ -21,8 +21,12 @@
 
 <label for="${AttributeConst.EMP_DEPT.getValue()}">所属部署</label><br />
 <select name="${AttributeConst.EMP_DEPT.getValue()}">
-    <option value="${AttributeConst.DEPT_GENERAL_AFFAIRS.getValue()}" <c:if test="${employee.department == AttributeConst.DEPT_GENERAL_AFFAIRS.getValue()}">selected</c:if>>総務</option>
-    <option value="${AttributeConst.DEPT_HUMAN_RESOURCES.getValue()}"<c:if test="${employee.department == AttributeConst.DEPT_HUMAN_RESOURCES.getValue()}">selected</c:if>>人事</option>
+    <option value="${AttributeConst.DEPT_GENERAL_AFFAIRS.getValue()}" <c:if test="${employee.department == AttributeConst.DEPT_GENERAL_AFFAIRS.getValue()}">selected</c:if>>総務部</option>
+    <option value="${AttributeConst.DEPT_HUMAN_RESOURCES.getValue()}" <c:if test="${employee.department == AttributeConst.DEPT_HUMAN_RESOURCES.getValue()}">selected</c:if>>人事部</option>
+    <option value="${AttributeConst.DEPT_ACCOUNTING.getValue()}" <c:if test="${employee.department == AttributeConst.DEPT_ACCOUNTING.getValue()}">selected</c:if>>経理部</option>
+    <option value="${AttributeConst.DEPT_BUSINESS.getValue()}" <c:if test="${employee.department == AttributeConst.DEPT_BUSINESS.getValue()}">selected</c:if>>営業部</option>
+    <option value="${AttributeConst.DEPT_DEVELOPMENT.getValue()}" <c:if test="${employee.department == AttributeConst.DEPT_DEVELOPMENT.getValue()}">selected</c:if>>開発部</option>
+    <option value="${AttributeConst.DEPT_PRODUCTION.getValue()}" <c:if test="${employee.department == AttributeConst.DEPT_PRODUCTION.getValue()}">selected</c:if>>製造部</option>
 </select>
 <br /><br />
 
