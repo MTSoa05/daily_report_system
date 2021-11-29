@@ -52,4 +52,14 @@ public class ReportView {
      */
     private LocalDateTime updatedAt;
 
+    /**
+     * 承認状態
+     */
+    private Integer approval;
+
+    /**
+     * 日報を登録した従業員の役職
+     */
+    private Integer position;
+
 }

@@ -135,7 +135,7 @@ h1 a {
 
 table#report_list th {
     font-weight: bold;
-    padding: 1-px 2%;
+    padding: 10px 2%;
 }
 
 table#report_list .report_name {
@@ -143,16 +143,24 @@ table#report_list .report_name {
     padding: 10px 2%;
 }
 
+table#report_list .report_position {
+    width: 10%;
+}
+
 table#report_list .report_date {
     width: 20%;
 }
 
 table#report_list .report_title {
-    width: 37%;
+    width: 30%;
+}
+
+table#report_list .report_approval {
+    width: 10%;
 }
 
 table#report_list .report_action {
-    width: 13%;
+    width: 10%;
 }
 
 pre {

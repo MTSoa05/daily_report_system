@@ -47,7 +47,7 @@ public interface JpaConst {
     String REP_COL_CREATED_AT = "created_at"; // 登録日時
     String REP_COL_UPDATED_AT = "updated_at"; // 更新日時
     String REP_COL_APPROVAL = "approval"; // 承認状態
-    String REP_COLPOSITION = "employee_pos"; // 従業員の役職
+    String REP_COL_POS = "employee_pos"; // 従業員の役職
 
     // Entity名
     String ENTITY_EMP = "employee"; // 従業員

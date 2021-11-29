@@ -94,4 +94,16 @@ public class Report {
     @Column(name = JpaConst.REP_COL_UPDATED_AT, nullable = false)
     private LocalDateTime updatedAt;
 
+    /**
+     * 承認状態
+     */
+    @Column(name = JpaConst.REP_COL_APPROVAL, nullable = false)
+    private Integer approval;
+
+    /**
+     * 日報を登録した従業員の役職
+     */
+    @Column(name = JpaConst.REP_COL_POS, nullable = false)
+    private Integer position;
+
 }

@@ -64,7 +64,12 @@ public enum AttributeConst {
     // 役職管理
     POS_MANAGER(2),
     POS_SECTION_CHIEF(1),
-    POS_GENERAL(0);
+    POS_GENERAL(0),
+
+    // 承認状態
+    APPROVE_FLAG_TRUE(1),
+    APPROVE_FLAG_FALSE(0),
+    APPROVE_FLAG_RETRY(2);
 
     private final String text;
     private final Integer i;
