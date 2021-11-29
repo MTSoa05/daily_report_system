@@ -28,9 +28,14 @@ public class EmployeeView {
     private String code;
 
     /**
-     * 部署名 追加
+     * 部署名
      */
     private String department;
+
+    /**
+     * 役職
+     */
+    private String position;
 
     /**
      * 氏名

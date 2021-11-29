@@ -21,13 +21,28 @@
                 <tr>
                     <th>社員番号</th>
                     <th>所属部署</th>
+                    <th>役職</th>
                     <th>氏名</th>
                     <th>操作</th>
                 </tr>
                 <c:forEach var="employee" items="${employees}" varStatus="status">
                     <tr class="row${status.count % 3}">
                         <td><c:out value="${employee.code}" /></td>
-                        <td><c:out value="${employee.department}"></c:out></td>
+                        <td>
+                             <c:choose>
+                                <c:when test="${employee.department == AttributeConst.DEPT_GENERAL_AFFAIRS.getValue()}">総務部</c:when>
+                                <c:when test="${employee.department == AttributeConst.DEPT_HUMAN_RESOURCES.getValue()}">人事部</c:when>
+                                <c:when test="${employee.department == AttributeConst.DEPT_ACCOUNTING.getValue()}">経理部</c:when>
+                                <c:when test="${employee.department == AttributeConst.DEPT_BUSINESS.getValue()}">営業部</c:when>
+                            </c:choose>
+                        </td>
+                        <td>
+                            <c:choose>
+                                <c:when test="${employee.position == AttributeConst.POS_MANAGER.getIntegerValue()}">部長</c:when>
+                                <c:when test="${employee.position == AttributeConst.POS_SECTION_CHIEF.getIntegerValue()}">課長</c:when>
+                                <c:when test="${employee.position == AttributeConst.POS_GENERAL.getIntegerValue()}">一般</c:when>
+                            </c:choose>
+                        </td>
                         <td><c:out value="${employee.name}" /></td>
                         <td>
                             <c:choose>

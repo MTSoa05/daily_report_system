@@ -59,10 +59,16 @@ public class Employee {
     private String code;
 
     /**
-     * 部署名 追加
+     * 部署名
      */
     @Column(name = JpaConst.EMP_COL_DEPT, nullable = false)
     private String department;
+
+    /**
+     * 役職
+     */
+    @Column(name = JpaConst.EMP_COL_POS, nullable = false)
+    private String position;
 
     /**
      * 氏名

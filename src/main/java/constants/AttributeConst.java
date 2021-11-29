@@ -30,7 +30,8 @@ public enum AttributeConst {
     EMP_COUNT("employees_count"),
     EMP_ID("id"),
     EMP_CODE("code"),
-    EMP_DEPT("department"), //追加
+    EMP_DEPT("department"),
+    EMP_POS("position"),
     EMP_PASS("password"),
     EMP_NAME("name"),
     EMP_ADMIN_FLG("admin_flag"),
@@ -51,14 +52,19 @@ public enum AttributeConst {
     REP_DATE("report_date"),
     REP_TITLE("title"),
     REP_CONTENT("content"),
+    REP_APPROVAL("approval"),
+    REP_POSITION("employee_pos"),
 
-    // 部署管理 追加
-    DEPT_GENERAL_AFFAIRS("総務部"),
-    DEPT_HUMAN_RESOURCES("人事部"),
-    DEPT_ACCOUNTING("経理部"),
-    DEPT_BUSINESS("営業部"),
-    DEPT_DEVELOPMENT("開発部"),
-    DEPT_PRODUCTION("製造部");
+    // 部署管理
+    DEPT_GENERAL_AFFAIRS("100"),
+    DEPT_HUMAN_RESOURCES("200"),
+    DEPT_ACCOUNTING("300"),
+    DEPT_BUSINESS("400"),
+
+    // 役職管理
+    POS_MANAGER(2),
+    POS_SECTION_CHIEF(1),
+    POS_GENERAL(0);
 
     private final String text;
     private final Integer i;

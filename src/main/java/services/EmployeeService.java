@@ -155,7 +155,8 @@ public class EmployeeService extends ServiceBase {
                     EncryptUtil.getPasswordEncrypt(ev.getPassword(), pepper));
         }
 
-        savedEmp.setDepartment(ev.getDepartment()); // 変更後の部署を設定する　追加
+        savedEmp.setDepartment(ev.getDepartment()); // 変更後の部署を設定する
+        savedEmp.setPosition(ev.getPosition()); // 変更後の役職を設定する
         savedEmp.setName(ev.getName()); // 変更後の氏名を設定する
         savedEmp.setAdminFlag(ev.getAdminFlag()); // 設定後の管理者フラグを設定する
 

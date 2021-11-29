@@ -18,7 +18,8 @@ public interface JpaConst {
     // 従業員テーブルカラム
     String EMP_COL_ID = "id"; // id
     String EMP_COL_CODE = "code"; // 社員番号
-    String EMP_COL_DEPT = "department"; // 部署名   追加
+    String EMP_COL_DEPT = "department"; // 部署名
+    String EMP_COL_POS = "position"; // 役職
     String EMP_COL_NAME = "name"; // 氏名
     String EMP_COL_PASS = "password"; // パスワード
     String EMP_COL_ADMIN_FLAG = "admin_flag"; // 管理者権限
@@ -31,6 +32,10 @@ public interface JpaConst {
     int EMP_DEL_TRUE = 1; // 削除フラグON(削除済み)
     int EMP_DEL_FALSE = 0; // 削除フラグOFF(現役)
 
+    int POS_MANEGER = 2; // 部長
+    int POS_SECTION_CHIEF = 1; // 課長
+    int POS_GENERAL = 0; // 一般
+
     // 日報テーブル
     String TABLE_REP = "reports"; // テーブル名
     // 日報テーブルカラム
@@ -41,6 +46,8 @@ public interface JpaConst {
     String REP_COL_CONTENT = "content"; // 日報の内容
     String REP_COL_CREATED_AT = "created_at"; // 登録日時
     String REP_COL_UPDATED_AT = "updated_at"; // 更新日時
+    String REP_COL_APPROVAL = "approval"; // 承認状態
+    String REP_COLPOSITION = "employee_pos"; // 従業員の役職
 
     // Entity名
     String ENTITY_EMP = "employee"; // 従業員
