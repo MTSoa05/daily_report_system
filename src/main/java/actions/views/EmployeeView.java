@@ -35,7 +35,7 @@ public class EmployeeView {
     /**
      * 役職
      */
-    private String position;
+    private Integer position;
 
     /**
      * 氏名

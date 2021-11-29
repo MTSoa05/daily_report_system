@@ -1,6 +1,7 @@
 <%@ page language="java" contentType="text/html; charset=UTF-8" pageEncoding="UTF-8"%>
 <%@ taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core"%>
 <%@ taglib prefix="fmt" uri="http://java.sun.com/jsp/jstl/fmt"%>
+<%@ page import="constants.AttributeConst" %>
 <%@ page import="constants.ForwardConst" %>
 
 <c:set var="actRep" value="${ForwardConst.ACT_REP.getValue()}" />
@@ -10,12 +11,28 @@
 <c:import url="/WEB-INF/views/layout/app.jsp">
     <c:param name="content">
 
-        <h2>日報 詳細ページ</h2>
+        <h2>日報 詳細ページ</h2>&nbsp;&nbsp;
+        <c:choose>
+            <c:when test="${sessionScope.login_employee.position == AttributeConst.POS_MANAGER.getIntegerValue()}"><c:import url="approve.jsp" /></c:when>
+            <c:when test="${sessionScope.login_employee.position == AttributeConst.POS_SECTION_CHIEF.getIntegerValue() && report.position == AttributeConst.POS_GENERAL.getIntegerValue()}">
+                <c:import url="approve.jsp" />
+            </c:when>
+        </c:choose>
 
         <table>
             <tr>
                 <th>氏名</th>
                 <td><c:out value="${report.employee.name}" /></td>
+            </tr>
+            <tr>
+                <th>役職</th>
+                <td>
+                    <c:choose>
+                        <c:when test="${report.position == AttributeConst.POS_MANAGER.getIntegerValue()}">部長</c:when>
+                        <c:when test="${report.position == AttributeConst.POS_SECTION_CHIEF.getIntegerValue()}">課長</c:when>
+                        <c:when test="${report.position == AttributeConst.POS_GENERAL.getIntegerValue()}">一般</c:when>
+                    </c:choose>
+                </td>
             </tr>
             <tr>
                 <th>日付</th>

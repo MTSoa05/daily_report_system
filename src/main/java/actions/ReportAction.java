@@ -118,7 +118,7 @@ public class ReportAction extends ActionBase {
                        null,
                        null,
                        AttributeConst.APPROVE_FLAG_FALSE.getIntegerValue(),
-                       toNumber(ev.getPosition()));
+                       ev.getPosition());
 
                // 日報情報登録
                List<String> errors = service.create(rv);
@@ -161,6 +161,7 @@ public class ReportAction extends ActionBase {
 
            } else {
 
+               putRequestScope(AttributeConst.TOKEN, getTokenId()); //CSRF対策用トークン
                putRequestScope(AttributeConst.REPORT, rv); // 取得した日報データ
 
                // 詳細画面を表示
@@ -236,6 +237,57 @@ public class ReportAction extends ActionBase {
                    redirect(ForwardConst.ACT_REP, ForwardConst.CMD_INDEX);
 
                }
+           }
+       }
+
+       /**
+        * 承認状態を変更する
+        * @throws ServletException
+        * @throws IOException
+        */
+       public void approve() throws ServletException, IOException {
+
+           // CSRF対策tokenチェック
+           if(checkToken() && checkPosition()) {
+
+               // idを条件に日報データを取得する
+               ReportView rv = service.findOne(toNumber(getRequestParam(AttributeConst.REP_ID)));
+
+               // 入力された日報内容を設定する
+               rv.setApproval(toNumber(getRequestParam(AttributeConst.REP_APPROVAL)));
+
+               // 日報データを更新する
+               service.approve(rv);
+
+                   // セッションに更新完了のフラッシュメッセージを設定
+                   putSessionScope(AttributeConst.FLUSH, MessageConst.I_UPDATED.getMessage());
+
+                   // 一覧画面にリダイレクト
+                   redirect(ForwardConst.ACT_REP, ForwardConst.CMD_INDEX);
+
+               }
+           }
+
+       /**
+        * CSRF対策 役職が無い場合はエラー画面を表示
+        * @return true: 役職有り false: 役職無し
+        * @throws ServletException
+        * @throws IOException
+        */
+       protected boolean checkPosition() throws ServletException, IOException {
+
+           // セッションからログイン中の従業員情報を取得
+           EmployeeView ev = (EmployeeView) getSessionScope(AttributeConst.LOGIN_EMP);
+
+
+           // 役職がなければエラー画面を表示
+           if(ev.getPosition() == AttributeConst.POS_GENERAL.getIntegerValue()) {
+
+               forward(ForwardConst.FW_ERR_UNKNOWN);
+
+               return false;
+           } else {
+               return true;
            }
        }
 

@@ -68,7 +68,7 @@ public class Employee {
      * 役職
      */
     @Column(name = JpaConst.EMP_COL_POS, nullable = false)
-    private String position;
+    private Integer position;
 
     /**
      * 氏名

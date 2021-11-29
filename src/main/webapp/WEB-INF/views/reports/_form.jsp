@@ -30,4 +30,6 @@
 <br /><br />
 <input type="hidden" name="${AttributeConst.REP_ID.getValue()}" value="${report.id}" />
 <input type="hidden" name="${AttributeConst.TOKEN.getValue()}" value="${_token}" />
+<input type="hidden" name="${AttributeConst.REP_POSITION.getIntegerValue()}" value="${sessionScope.login_employee.position}" />
+<input type="hidden" name="${AttributeConst.REP_APPROVAL.getIntegerValue()}" value="${report.approval}" />
 <button type="submit">投稿</button>

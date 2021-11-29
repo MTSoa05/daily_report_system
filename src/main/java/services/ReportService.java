@@ -154,4 +154,14 @@ public class ReportService extends ServiceBase {
 
     }
 
+    public void approve(ReportView rv) {
+
+     // 更新日時を現在時刻に設定
+        LocalDateTime ldt = LocalDateTime.now();
+        rv.setUpdatedAt(ldt);
+
+        updateInternal(rv);
+
+    }
+
 }
